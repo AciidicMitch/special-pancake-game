@@ -10,11 +10,6 @@ public class WordBank
         //oh no now i do the thing
     }
 
-    public void GetWordBank()
-    {
-        //return wordBank;
-    }
-
     public static string SelectWord()
     {
         string word = "zee";
