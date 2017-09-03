@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\HangmanGame"
   ],
-  "SelectedNode": "\\WordBank.cs",
+  "SelectedNode": "\\HangmanGame\\HangmanGame.sln",
   "PreviewInSolutionExplorer": false
 }
