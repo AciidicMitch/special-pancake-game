@@ -7,6 +7,7 @@ public class Runner {
 		System.out.println("WEWZZZZZ");
 		
 		String secretword = "what";
+		Wordbank bank = new Wordbank;
 		
 		Guessing guess = new Guessing(secretword);
 	}
