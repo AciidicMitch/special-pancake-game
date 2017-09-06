@@ -7,11 +7,12 @@ public class Runner {
 		System.out.println("WEWZZZZZ");
 		
 		String secretword = "what";
-		WordBank bank = new WordBank();
+
 		
 		Guessing guess = new Guessing(secretword);
 		
-		System.out.println(guess);
+		System.out.println(guess.checker());
+		
 	}
 
 }

@@ -4,23 +4,27 @@ import java.util.Scanner;
 public class Guessing {
 
 	Scanner scan = new Scanner(System.in);
+	WordBank bank = new WordBank();
 	
 	
 	private int lives;
-	private String word;
-	private CharSequence guess;
+	private String guess;
 	private int lettersLeft;
+	private String word;  //whyyyyyy problems
+	
 	
 	public Guessing(String word){
+		
+		word = bank.GetWord();
 		this.word = word;
 		lives = 10;	
 		lettersLeft = word.length();
 	}
-	
-	public void checker(){
+	public String checker(){
+		System.out.println("What is your guess?");
 		guess = scan.nextLine();
 		boolean pass = false;
-		System.out.println("guess");
+		return (guess);
 // MAKING CHECKER FOR VALID???		
 		
 	}
