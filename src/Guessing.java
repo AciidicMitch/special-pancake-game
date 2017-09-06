@@ -18,8 +18,9 @@ public class Guessing {
 	}
 	
 	public void checker(){
-		word = scan.nextLine()
+		guess = scan.nextLine();
 		boolean pass = false;
+		System.out.println("guess");
 // MAKING CHECKER FOR VALID???		
 		
 	}
