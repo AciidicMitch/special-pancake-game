@@ -11,6 +11,8 @@ public class Runner {
 		
 		Guessing guess = new Guessing(secretword);
 		
+		
+		//Currently for testing if word has been selected.
 		System.out.println(guess.checker());
 		
 	}

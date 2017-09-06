@@ -10,32 +10,35 @@ public class Guessing {
 	private int lives;
 	private String guess;
 	private int lettersLeft;
-	private String word;  //whyyyyyy problems
+	private String word = "TESTWORD";  //whyyyyyy problems
 	
 	
-	public Guessing(String word){
-		
-		word = bank.GetWord();
+	public Guessing(String word){	
 		this.word = word;
+//		word = bank.GetWord();
 		lives = 10;	
 		lettersLeft = word.length();
 	}
+	
 	public String checker(){
 		System.out.println("What is your guess?");
 		guess = scan.nextLine();
-		boolean pass = false;
-		return (guess);
-// MAKING CHECKER FOR VALID???		
-		
+		return (guess);	
 	}
 	
 	public boolean guesserThing(){
+//MKAE THIS WORK
 		if (word.contains(guess)){
+			System.out.println("That's correct. You have " + lettersLeft + " to guess.");
 			return true;
 		}
 		else{
 			return false;
 		}
+		
+		//if (lives > 0){
+		//	checker();
+		//}
 	}
 	
 	
