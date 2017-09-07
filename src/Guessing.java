@@ -10,18 +10,18 @@ public class Guessing {
 	private int lives;
 	private String guess;
 	private int lettersLeft;
-	private String word = "TESTWORD";  //whyyyyyy problems
+	private String wordz = "TESTWORD";  //whyyyyyy problems
 	private String currentAsteriskWord = "* testing";
 	private int count;
 	
 	
 	public Guessing(String word){	
-		this.word = word;
+		wordz = word;
 //		word = bank.GetWord();
 		word = "TESTWORD"; //delete when functional
 //		currentAsteriskWord.create();
 		lives = 10;	
-		lettersLeft = word.length();
+		lettersLeft = wordz.length();
 	}
 	
 	public String checker(){
@@ -30,18 +30,18 @@ public class Guessing {
 		}
 		System.out.println("What is your guess?");
 		guess = scan.nextLine();
-		guess.toUpperCase();
-		lives--;
+		guess = guess.toUpperCase();
 		return (guess);
 	}
 	
 	public boolean guesserThing(){
-		for(int i = 0; i < word.length(); i++){
-			if(!word.contains(guess)){
+		guess = guess.toUpperCase();
+		for(int i = 0; i < wordz.length(); i++){
+			if(!wordz.contains(guess)){
 				count++;
 			}
 		}
-		if (!word.contains(guess)){		
+		if (wordz.contains(guess)){		
 			lettersLeft = lettersLeft - count;
 			System.out.println("That's correct. You have " + lettersLeft + " to guess.");
 //			currentAsteriskWord.update();
@@ -51,6 +51,7 @@ public class Guessing {
 		}
 		else{
 			System.out.println("FAIL");
+			lives--;
 			return false;
 		}
 		
@@ -61,7 +62,7 @@ public class Guessing {
 	
 	
 	public String getWord(){
-		return word;		
+		return wordz;		
 	}
 	
 	public String toString(){
