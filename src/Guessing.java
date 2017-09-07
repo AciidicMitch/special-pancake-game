@@ -66,6 +66,9 @@ public class Guessing {
 					asterick.replace(i, i+1, guess.substring(0, 1));
 					count ++;
 				}
+				if(charRepl == ' '){
+					count++;
+				}
 			}			
 			lettersLeft = lettersLeft - count;
 			System.out.println("That's correct. You have " + lettersLeft + " to guess.");
