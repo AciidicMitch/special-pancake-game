@@ -18,29 +18,28 @@ public class WordBank {
 		System.out.println("yooo");
 		try {
 			System.out.println("yooo");
-			int lines = 0;
+			int line = 0;
 			Scanner scan = new Scanner(wordBank);
 			while (scan.hasNextLine()) {
 				//String line = scan.toString();
 				//System.out.println(scan.toString());
+				//String line = scan.next();
+               // System.out.println(line);
 				if(scan.nextLine() == null){
 					break;
 				}
-				else{lines++;}
+				else{
+					bank[line] = scan.next(); 	
+					line++;
+				}
             }
 			System.out.println("yooo");
-			int selectedWord = (int)(Math.random() *lines) + 1;
+			int selectedWord = (int)(Math.random() *line) + 1;
 			System.out.println(selectedWord + " is the index location");
-			lines = 0;
-			while(true) {
-                //String line = scan.toString();
-				if(lines == selectedWord){
-					word = scan.nextLine();
-					break;
-				}
-				System.out.println(lines);
-				lines++;
-            }
+			
+			word = bank[selectedWord];    
+			System.out.println(word);
+			scan.close();
 			
 		} catch (FileNotFoundException e){e.printStackTrace();}
 		

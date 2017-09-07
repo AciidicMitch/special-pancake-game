@@ -3,10 +3,9 @@ public class Runner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		
-		String secretword = "WHY";
-
+		String secretword = new WordBank().GetWord();
+		
 		
 		Guessing guess = new Guessing(secretword);
 		
