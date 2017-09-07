@@ -15,10 +15,10 @@ public class Guessing {
 	private int count;
 	
 	
-	public Guessing(String word){	
+	public Guessing(String word, String[] secretWord){	
 		wordz = word;
 //		word = bank.GetWord();
-		word = "TESTWORD"; //delete when functional
+//		word = "TESTWORD"; //delete when functional
 //		currentAsteriskWord.create();
 		lives = 10;	
 		lettersLeft = wordz.length();
@@ -58,11 +58,6 @@ public class Guessing {
 		//if (lives > 0){
 		//	checker();
 		//}
-	}
-	
-	
-	public String getWord(){
-		return wordz;		
 	}
 	
 	public String toString(){
