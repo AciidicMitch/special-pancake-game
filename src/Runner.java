@@ -20,8 +20,10 @@ public class Runner {
 		
 		Guessing guess = new Guessing(word, secretWord);
 		//Currently for testing if word has been selected.
-		System.out.println(guess.checker());
-		System.out.println(guess.guesserThing());
+		while(guess.lives > 0 || guess.lettersLeft == 0){
+			guess.checker();
+		}
+	
 		//guess.checker();
 		
 	}
