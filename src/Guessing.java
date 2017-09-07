@@ -11,12 +11,13 @@ public class Guessing {
 	private String guess;
 	private int lettersLeft;
 	private String wordz = "TESTWORD";  //whyyyyyy problems
-	private String currentAsteriskWord = "* testing";
+	private String currentAsteriskWord = null;
 	private int count;
 	
 	
-	public Guessing(String word, String[] secretWord){	
+	public Guessing(String word, String secretWord){	
 		wordz = word;
+		currentAsteriskWord = secretWord;
 //		word = bank.GetWord();
 //		word = "TESTWORD"; //delete when functional
 //		currentAsteriskWord.create();
@@ -36,16 +37,27 @@ public class Guessing {
 	
 	public boolean guesserThing(){
 		guess = guess.toUpperCase();
-		for(int i = 0; i < wordz.length(); i++){
-			if(!wordz.contains(guess)){
-				count++;
-			}
-		}
+//		for(int i = 0; i < wordz.length(); i++){
+//			if(!wordz.contains(guess)){
+//				count++;
+//			}
+//		}
 		if (wordz.contains(guess)){		
+//			currentAsteriskWord.update();
+			StringBuilder asterick = new StringBuilder(currentAsteriskWord);
+			char guezz = guess.charAt(0);
+			for(int i = 0; i < wordz.length(); i++){
+				char charRepl = wordz.charAt(i);
+				if(charRepl == guezz)
+				{					
+					asterick.replace(i, i+1, guess);
+					count ++;
+				}
+			}			
 			lettersLeft = lettersLeft - count;
 			System.out.println("That's correct. You have " + lettersLeft + " to guess.");
-//			currentAsteriskWord.update();
-			System.out.println(currentAsteriskWord);
+			//asterick.replace(wordz.indexOf(guess), wordz.indexOf(guess) + 1, guess);
+			System.out.println(asterick);
 			count = 0;
 			return true;
 		}
