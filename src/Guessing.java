@@ -11,28 +11,46 @@ public class Guessing {
 	private String guess;
 	private int lettersLeft;
 	private String word = "TESTWORD";  //whyyyyyy problems
+	private String currentAsteriskWord = "* testing";
+	private int count;
 	
 	
 	public Guessing(String word){	
 		this.word = word;
 //		word = bank.GetWord();
+		word = "TESTWORD"; //delete when functional
+//		currentAsteriskWord.create();
 		lives = 10;	
 		lettersLeft = word.length();
 	}
 	
 	public String checker(){
+		if(lives < 1){
+			return "You are out of lives";
+		}
 		System.out.println("What is your guess?");
 		guess = scan.nextLine();
-		return (guess);	
+		guess.toUpperCase();
+		lives--;
+		return (guess);
 	}
 	
 	public boolean guesserThing(){
-//MKAE THIS WORK
-		if (word.contains(guess)){
+		for(int i = 0; i < word.length(); i++){
+			if(!word.contains(guess)){
+				count++;
+			}
+		}
+		if (!word.contains(guess)){		
+			lettersLeft = lettersLeft - count;
 			System.out.println("That's correct. You have " + lettersLeft + " to guess.");
+//			currentAsteriskWord.update();
+			System.out.println(currentAsteriskWord);
+			count = 0;
 			return true;
 		}
 		else{
+			System.out.println("FAIL");
 			return false;
 		}
 		

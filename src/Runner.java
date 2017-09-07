@@ -15,6 +15,9 @@ public class Runner {
 		//Currently for testing if word has been selected.
 		System.out.println(guess.checker());
 		
+		//guess.checker();
+		guess.guesserThing();
+		
 	}
 
 }
