@@ -24,7 +24,7 @@ public class Runner {
 			guess.checker();
 		}
 	
-		//guess.checker();
+		
 		
 	}
 

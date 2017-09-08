@@ -10,7 +10,7 @@ public class Guessing {
 	public int lives;
 	private String guess;
 	public int lettersLeft;
-	private String wordz = "TESTWORD";  //whyyyyyy problems
+	private String wordz = "TESTWORD";  
 	private String currentAsteriskWord = null;
 	private int count;
 	
@@ -18,9 +18,6 @@ public class Guessing {
 	public Guessing(String word, String secretWord){	
 		wordz = word;
 		currentAsteriskWord = secretWord;
-//		word = bank.GetWord();
-//		word = "TESTWORD"; //delete when functional
-//		currentAsteriskWord.create();
 		lives = 10;	
 		lettersLeft = wordz.length();
 	}
