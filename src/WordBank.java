@@ -5,48 +5,52 @@ public class WordBank {
 	File wordBank = new File("words.txt");
 	String word;
 	String[] bank;
-	
-	public String GetWord(){
-		if(word == null){
+	String lineToRead;
+	public String GetWord() throws IOException {
+		if (word == null) {
 			SelectWord();
 		}
-		
+
 		return word;
 	}
-	
-	private String SelectWord(){
-		System.out.println("yooo");
+
+	private String SelectWord() throws IOException{
+		//System.out.println("yooo");
 		try {
-			System.out.println("yooo");
-			int lines = 0;
+			//System.out.println("yooo");
+			int line = 0;
 			Scanner scan = new Scanner(wordBank);
+			LineNumberReader  lnr = new LineNumberReader(new FileReader(wordBank));
 			while (scan.hasNextLine()) {
 				//String line = scan.toString();
 				//System.out.println(scan.toString());
+				//String line = scan.next();
+               // System.out.println(line);
 				if(scan.nextLine() == null){
 					break;
 				}
-				else{lines++;}
+				else{
+					line++;
+				}
             }
-			System.out.println("yooo");
-			int selectedWord = (int)(Math.random() *lines) + 1;
-			System.out.println(selectedWord + " is the index location");
-			lines = 0;
-			while(true) {
-                //String line = scan.toString();
-				if(lines == selectedWord){
-					word = scan.nextLine();
+			//System.out.println("yooo");
+			int selectedWord = (int)(Math.random() *line);
+			System.out.println(selectedWord + 1 + " is the line number");
+			while ((lineToRead = lnr.readLine()) != null)
+	         {
+				if(lnr.getLineNumber() == selectedWord+1){
+					word = lnr.readLine();
+					if(word == null){word = "NULLIFICATION";}
 					break;
 				}
-				System.out.println(lines);
-				lines++;
-            }
-			
+	            //System.out.println("Line " + lnr.getLineNumber() + ": " + lineToRead);
+	         }
+			//lnr.setLineNumber(selectedWord);
+			 
+			System.out.println(word);
+			scan.close();
+			lnr.close();
 		} catch (FileNotFoundException e){e.printStackTrace();}
 		
 		return word;
-	} 
-	
-	
-}
- 
+	}}
