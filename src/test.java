@@ -94,6 +94,7 @@ public class test {
 	for (int k=0; k < poleLines; k++){
 			System.out.println("  |");
 	}
-	
+	System.out.println("__|__");
+	System.out.println("");
 }
 }
